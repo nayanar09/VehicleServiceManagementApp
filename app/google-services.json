@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "941636748253",
+    "firebase_url": "https://vehicleserviceremaindera-28f3c.firebaseio.com",
+    "project_id": "vehicleserviceremaindera-28f3c",
+    "storage_bucket": "vehicleserviceremaindera-28f3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941636748253:android:574b686abde92c99866c34",
+        "android_client_info": {
+          "package_name": "com.nayana.example.vehicleserviceremainderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941636748253-0oas3f751e1sqfq15pqn39r7go5d3lbq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nayana.example.vehicleserviceremainderapp",
+            "certificate_hash": "f83e2387ba6c2307bdfdcea408d7ca8247808703"
+          }
+        },
+        {
+          "client_id": "941636748253-ebumvjgb0tu5m3avl186igb1vb278jec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm6ZP1Q_tk3x2eRtdgFR67_YfZoIdcZqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941636748253-ebumvjgb0tu5m3avl186igb1vb278jec.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

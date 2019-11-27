@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.WelcomeActivity"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/welcomeTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textColor="@color/Orange"
+        android:textSize="40sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065" />
+
+    <TextView
+        android:id="@+id/addVehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addVehicle"
+        android:textColor="@color/lightBlue"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTV"
+        app:layout_constraintVertical_bias="0.32" />
+
+    <ImageButton
+        android:id="@+id/twoWheelerIB"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/baseline_motorcycle_black_48"
+        android:backgroundTint="@color/AquaBlue"
+        app:layout_constraintBottom_toTopOf="@+id/fourWheelerIB"
+        app:layout_constraintEnd_toEndOf="@+id/fourWheelerIB"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/fourWheelerIB"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTV"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/fourWheelerIB"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/baseline_directions_car_black_48dp"
+        android:backgroundTint="@color/lightBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toEndOf="@+id/addVehicle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.407" />
+
+    <ImageButton
+        android:id="@+id/sixWheelerIB"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/truck"
+        app:layout_constraintBottom_toTopOf="@+id/gotoDisplayVehicleButton"
+        app:layout_constraintEnd_toEndOf="@+id/fourWheelerIB"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/fourWheelerIB"
+        app:layout_constraintTop_toBottomOf="@+id/fourWheelerIB"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/gotoDisplayVehicleButton"
+        android:layout_width="244dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="148dp"
+        android:backgroundTint="@color/Orange"
+        android:text="@string/viewVehicleAdded"
+        android:textColor="@color/White"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addVehicle"
+        app:layout_constraintVertical_bias="0.953" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

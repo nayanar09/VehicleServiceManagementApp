@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_outline">
+
+            <ImageView
+                android:id="@+id/vehicleImageList"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:adjustViewBounds="true"
+                android:cropToPadding="false"
+                android:scaleType="fitXY"
+                android:background="@drawable/input_outline"
+                app:srcCompat="@drawable/baseline_directions_bike_black_48" />
+
+            <TextView
+                android:id="@+id/vehicleNameList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/vehicleName"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/vehicleNumberList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/vehicleNumber"
+                android:padding="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/recentServiceDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/recentServiceDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/recentServiceMetreReadingList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/recentServiceMetreReading"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/nextServiceDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nextServiceDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/nextServiceMetreReadingList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nextServiceMetreReading"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/InsuredDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/vehicleInsuredDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/InsuredExpiryDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/vehicleInsuranceExpiryDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/engineOilReplacedDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/engineOilReplacedDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/engineServiceDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/engineServiceDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/chainReplacedDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/chainReplacedDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/backTyreReplacedDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/backTyreReplacedDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/frontTyreReplacedDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/frontTyreReplacedDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/vehicleSeatReplacedDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/vehicleSeatReplacedDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/headlightReplacedDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/headlightReplacedDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/indicatorReplacedDateList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/indicatorReplacedDate"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/aboutVehicleList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/writeAboutVehicle"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:textStyle="normal"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.cardview.widget.CardView>

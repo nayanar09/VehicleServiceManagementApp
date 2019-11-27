@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nayana.example.vehicleserviceremainderapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".DataHolder.AddSixWheelerVehicleDetails"></activity>
+        <activity android:name=".DataHolder.AddFourWheelerVehicleDetails" />
+        <activity android:name=".Activities.WelcomeActivity" />
+        <activity
+            android:name=".DataHolder.DisplayVehicleListActivity"
+            android:label="@string/title_activity_display_vehicle_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DataHolder.VehicleDetails" />
+        <activity android:name=".Activities.SetAlarmDetails" />
+        <activity android:name=".Activities.AddMoreVehicleDetails" />
+        <activity android:name=".DataHolder.AddTwoWheelerVehicleDetails" />
+        <activity android:name=".UI.CreateAccount" />
+        <activity android:name=".UI.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".Activities.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>
