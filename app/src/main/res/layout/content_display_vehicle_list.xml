@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.VehicleListActivity">
+    tools:context=".DataHolder.DisplayVehicleListActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/VehicleDisplayRecyclerViewID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

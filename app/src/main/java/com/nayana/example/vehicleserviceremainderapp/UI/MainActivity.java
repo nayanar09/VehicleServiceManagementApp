@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.nayana.example.vehicleserviceremainderapp.Activities.WelcomeActivity;
 import com.nayana.example.vehicleserviceremainderapp.DataHolder.DisplayVehicleListActivity;
 import com.nayana.example.vehicleserviceremainderapp.R;
 
@@ -108,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
                         else{
                             Toast.makeText( MainActivity.this , "SignIn Successful" , Toast.LENGTH_LONG).show();
 
-                            //startActivity( new Intent( MainActivity.this , VehicleListActivity.class));
-                            startActivity( new Intent( MainActivity.this , DisplayVehicleListActivity.class));
+                            //startActivity( new Intent( MainActivity.this , DisplayVehicleListActivity.class));
+                            startActivity( new Intent( MainActivity.this , WelcomeActivity.class));
                             finish();
                         }
                     }

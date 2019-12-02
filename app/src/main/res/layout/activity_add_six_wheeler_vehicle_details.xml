@@ -1,9 +1,256 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DataHolder.AddSixWheelerVehicleDetails">
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/SW_relativeLayoutID"
+        android:padding="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageButton
+            android:id="@+id/SW_vehicleImageButtonID"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/truck_image"
+            android:background="@drawable/input_outline"/>
+
+        <EditText
+            android:id="@+id/SW_vehicleNameID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/vehicleName"
+            android:inputType="textPersonName"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/SW_vehicleImageButtonID">
+            <requestFocus/>
+        </EditText>
+
+        <EditText
+            android:id="@+id/SW_vehicleNumberID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SW_vehicleNameID"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="@string/vehicleNumber"
+            android:inputType="textPersonName"
+            android:textStyle="italic" />
+
+        <EditText
+            android:id="@+id/SW_recentServiceDateID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/recentServiceDate"
+            android:inputType="date"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/SW_vehicleNumberID"/>
+
+
+        <EditText
+            android:id="@+id/SW_recentServiceMetreID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/recentServiceMetreReading"
+            android:inputType="none|number|numberDecimal"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/SW_recentServiceDateID"/>
+
+        <EditText
+            android:id="@+id/SW_nextServiceDateID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/nextServiceDate"
+            android:inputType="date"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/SW_recentServiceMetreID"/>
+
+        <Button
+            android:id="@+id/SW_setAlarmButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/SW_nextServiceMetreID"
+            android:layout_alignStart="@+id/SW_nextServiceDateID"
+            android:layout_marginStart="360dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/baseline_alarm_add_black_48" />
+
+        <EditText
+            android:id="@+id/SW_nextServiceMetreID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/nextServiceMetreReading"
+            android:inputType="none|number|numberDecimal"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/SW_nextServiceDateID"/>
+
+        <EditText
+            android:id="@+id/SW_vehicleInsuranceID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SW_nextServiceMetreID"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="@string/vehicleInsuredDate"
+            android:inputType="date"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/SW_insuranceExpiryID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SW_vehicleInsuranceID"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="@string/vehicleInsuranceExpiryDate"
+            android:inputType="date"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/SW_setAlarmButtonMore"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/SW_engineOilID"
+            android:layout_alignStart="@+id/SW_insuranceExpiryID"
+            android:layout_marginStart="360dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/baseline_alarm_add_black_48" />
+
+        <EditText
+            android:id="@+id/SW_engineOilID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/engineOilReplacedDate"
+            android:inputType="date"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/SW_insuranceExpiryID"/>
+
+        <EditText
+            android:id="@+id/SW_engineServiceID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/engineServiceDate"
+            android:inputType="date"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/SW_engineOilID"/>
+
+        <EditText
+            android:id="@+id/SW_chainReplacedID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/chainReplacedDate"
+            android:inputType="date"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/SW_engineServiceID"/>
+
+        <EditText
+            android:id="@+id/SW_backTyreReplacedID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/backTyreReplacedDate"
+            android:inputType="date"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/SW_chainReplacedID"/>
+
+        <EditText
+            android:id="@+id/SW_frontTyreReplacedID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/frontTyreReplacedDate"
+            android:inputType="date"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/SW_backTyreReplacedID"/>
+
+        <EditText
+            android:id="@+id/SW_vehicleSeatReplacedID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/vehicleSeatReplacedDate"
+            android:inputType="date"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/SW_frontTyreReplacedID"/>
+
+        <EditText
+            android:id="@+id/SW_indicatorReplacedID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/indicatorReplacedDate"
+            android:inputType="date"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/SW_vehicleSeatReplacedID"/>
+
+        <EditText
+            android:id="@+id/SW_headlightReplacedID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/headlightReplacedDate"
+            android:inputType="date"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/SW_indicatorReplacedID"/>
+
+        <EditText
+            android:id="@+id/SW_aboutVehicleID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SW_headlightReplacedID"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="20dp"
+            android:hint="@string/writeAboutVehicle"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/SW_saveVehicleDataButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/Blue"
+            android:text="@string/saveData"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:layout_below="@+id/SW_aboutVehicleID"/>
+
+    </RelativeLayout>
+
+</ScrollView>

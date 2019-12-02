@@ -1,5 +1,6 @@
 package com.nayana.example.vehicleserviceremainderapp.DataHolder;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -39,6 +40,7 @@ public class VehicleRecyclerViewAdapter extends RecyclerView.Adapter<VehicleRecy
         return new ViewHolder(view , context);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
@@ -123,12 +125,12 @@ public class VehicleRecyclerViewAdapter extends RecyclerView.Adapter<VehicleRecy
             headlightReplaced = itemView.findViewById(R.id.headlightReplacedDateList);
             aboutVehicle = itemView.findViewById(R.id.aboutVehicleList);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText( ctx , "Problem adding post", Toast.LENGTH_LONG).show();
-                }
-            });
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText( ctx , "", Toast.LENGTH_LONG).show();
+//                }
+//            });
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

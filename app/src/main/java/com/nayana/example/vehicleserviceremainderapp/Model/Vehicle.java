@@ -2,7 +2,7 @@ package com.nayana.example.vehicleserviceremainderapp.Model;
 
 public class Vehicle {
 
-    private String vehicleImage;
+    public String vehicleImage;
     public String vehicleName;
     public String vehicleNumber;
     public String recentServiceDate;
@@ -13,6 +13,14 @@ public class Vehicle {
     public String vehicleInsuranceExpiryDate;
     public String engineOilReplacedDate;
     public String engineServiceDate;
+
+    public String brakeServicedDate;
+    public String clutchServicedDate;
+    public String batteryReplacedDate;
+    public String mirrorsReplacedDate;
+    public String airConditionServiceDate;
+    public String radiatorServicedDate;
+
     public String chainReplacedDate;
     public String backTyreReplacedDate;
     public String frontTyreReplacedDate;
@@ -45,6 +53,32 @@ public class Vehicle {
         this.engineOilReplacedDate = engineOilReplacedDate;
         this.engineServiceDate = engineServiceDate;
         this.chainReplacedDate = chainReplacedDate;
+        this.backTyreReplacedDate = backTyreReplacedDate;
+        this.frontTyreReplacedDate = frontTyreReplacedDate;
+        this.vehicleSeatReplacedDate = vehicleSeatReplacedDate;
+        this.headlightReplacedDate = headlightReplacedDate;
+        this.indicatorReplacedDate = indicatorReplacedDate;
+        this.aboutVehicle = aboutVehicle;
+    }
+
+    public Vehicle(String vehicleImage, String vehicleName, String vehicleNumber, String recentServiceDate, String recentServiceMetreReading, String nextServiceDate, String nextServiceMetreReading, String vehicleInsuranceDate, String vehicleInsuranceExpiryDate, String engineOilReplacedDate, String engineServiceDate, String brakeServicedDate, String clutchServicedDate, String batteryReplacedDate, String mirrorsReplacedDate, String airConditionServiceDate, String radiatorServicedDate, String backTyreReplacedDate, String frontTyreReplacedDate, String vehicleSeatReplacedDate, String headlightReplacedDate, String indicatorReplacedDate, String aboutVehicle) {
+        this.vehicleImage = vehicleImage;
+        this.vehicleName = vehicleName;
+        this.vehicleNumber = vehicleNumber;
+        this.recentServiceDate = recentServiceDate;
+        this.recentServiceMetreReading = recentServiceMetreReading;
+        this.nextServiceDate = nextServiceDate;
+        this.nextServiceMetreReading = nextServiceMetreReading;
+        this.vehicleInsuranceDate = vehicleInsuranceDate;
+        this.vehicleInsuranceExpiryDate = vehicleInsuranceExpiryDate;
+        this.engineOilReplacedDate = engineOilReplacedDate;
+        this.engineServiceDate = engineServiceDate;
+        this.brakeServicedDate = brakeServicedDate;
+        this.clutchServicedDate = clutchServicedDate;
+        this.batteryReplacedDate = batteryReplacedDate;
+        this.mirrorsReplacedDate = mirrorsReplacedDate;
+        this.airConditionServiceDate = airConditionServiceDate;
+        this.radiatorServicedDate = radiatorServicedDate;
         this.backTyreReplacedDate = backTyreReplacedDate;
         this.frontTyreReplacedDate = frontTyreReplacedDate;
         this.vehicleSeatReplacedDate = vehicleSeatReplacedDate;
@@ -195,5 +229,53 @@ public class Vehicle {
 
     public void setIndicatorReplacedDate(String indicatorReplacedDate) {
         this.indicatorReplacedDate = indicatorReplacedDate;
+    }
+
+    public String getBrakeServicedDate() {
+        return brakeServicedDate;
+    }
+
+    public void setBrakeServicedDate(String brakeServicedDate) {
+        this.brakeServicedDate = brakeServicedDate;
+    }
+
+    public String getClutchServicedDate() {
+        return clutchServicedDate;
+    }
+
+    public void setClutchServicedDate(String clutchServicedDate) {
+        this.clutchServicedDate = clutchServicedDate;
+    }
+
+    public String getBatteryReplacedDate() {
+        return batteryReplacedDate;
+    }
+
+    public void setBatteryReplacedDate(String batteryReplacedDate) {
+        this.batteryReplacedDate = batteryReplacedDate;
+    }
+
+    public String getMirrorsReplacedDate() {
+        return mirrorsReplacedDate;
+    }
+
+    public void setMirrorsReplacedDate(String mirrorsReplacedDate) {
+        this.mirrorsReplacedDate = mirrorsReplacedDate;
+    }
+
+    public String getAirConditionServiceDate() {
+        return airConditionServiceDate;
+    }
+
+    public void setAirConditionServiceDate(String airConditioningServiceDate) {
+        this.airConditionServiceDate = airConditioningServiceDate;
+    }
+
+    public String getRadiatorServicedDate() {
+        return radiatorServicedDate;
+    }
+
+    public void setRadiatorServicedDate(String radiatorServicedDate) {
+        this.radiatorServicedDate = radiatorServicedDate;
     }
 }

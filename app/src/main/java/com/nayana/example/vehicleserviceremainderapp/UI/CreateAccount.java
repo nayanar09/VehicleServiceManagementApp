@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.nayana.example.vehicleserviceremainderapp.Activities.WelcomeActivity;
 import com.nayana.example.vehicleserviceremainderapp.DataHolder.DisplayVehicleListActivity;
 import com.nayana.example.vehicleserviceremainderapp.R;
 
@@ -51,7 +52,7 @@ public class CreateAccount extends AppCompatActivity {
         CA_createAccount = (Button) findViewById(R.id.CAcreateAccountID);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference().child("Blog_Users");
+        databaseReference = firebaseDatabase.getReference().child("Vehicle_NewAccount");
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mProgressDialog = new ProgressDialog(this);
@@ -89,15 +90,15 @@ public class CreateAccount extends AppCompatActivity {
                         currentUserDB.child("firstName : ").setValue(firstname);
                         currentUserDB.child("lastName : ").setValue(lastname);
 
-                        Log.i(TAG , "currentUserDB.toString()");
                         Log.i(TAG , currentUserDB.toString());
 
                         mProgressDialog.dismiss();
                         Toast.makeText( CreateAccount.this , "Account Created Successfully", Toast.LENGTH_LONG).show();
-                        Toast.makeText( CreateAccount.this , "Welcome new Blogger", Toast.LENGTH_LONG).show();
+                        Toast.makeText( CreateAccount.this , "Welcome!!!", Toast.LENGTH_LONG).show();
 
                         //send users to PostListActivity
-                        Intent intent = new Intent( CreateAccount.this , DisplayVehicleListActivity.class );
+                        //Intent intent = new Intent( CreateAccount.this , DisplayVehicleListActivity.class );
+                        Intent intent = new Intent( CreateAccount.this , WelcomeActivity.class );
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //If set, and the activity being launched is already running in the current task, then instead of launching a new instance of that activity, all of the other activities on top of it will be closed and this Intent will be delivered to the (now on top) old activity as a new Intent.
                         startActivity(intent);
                         finish();

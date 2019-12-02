@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -46,10 +47,10 @@ public class AddTwoWheelerVehicleDetails extends AppCompatActivity {
     private StorageReference storage;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
+    private String userID;
     private ProgressDialog progressDialog;
     private static final int IMAGE_REQUEST_CODE = 1;
     private Uri imageUri;
-    private Vehicle vehicle;
 
     private ImageButton vehicleImageButton;
     private EditText vehicleName;
@@ -75,20 +76,25 @@ public class AddTwoWheelerVehicleDetails extends AppCompatActivity {
 
     private Button saveVehicleDataButton;
     private Button addMoreVehicleDetails;
+    int redColorValue = Color.RED;
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog; //A subclass of Dialog that can display one, two or three buttons.
 
+    @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_vehicle_details);
+        setContentView(R.layout.activity_add_two_wheeler_vehicle_details);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference().child("Vehicle");
-        storage = FirebaseStorage.getInstance().getReference();
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
+        userID = firebaseUser.getUid();
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference().child("Vehicle").child(userID);
+        storage = FirebaseStorage.getInstance().getReference();
+
         progressDialog = new ProgressDialog(this);
 
         vehicleImageButton = (ImageButton) findViewById(R.id.vehicleImageButtonID);
@@ -123,6 +129,11 @@ public class AddTwoWheelerVehicleDetails extends AppCompatActivity {
 //            vehicleName.requestFocus();
 //            return;
 //        }
+
+        vehicleName.setHintTextColor(redColorValue);
+        vehicleNumber.setHintTextColor(redColorValue);
+        recentServiceDate.setHintTextColor(redColorValue);
+        nextServiceDate.setHintTextColor(redColorValue);
 
         vehicleImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -295,6 +306,7 @@ public class AddTwoWheelerVehicleDetails extends AppCompatActivity {
                                     +" HeadlightReplacedDate() : "+ headlightReplacedET
                                     +" IndicatorReplacedDate() : "+ indicatorReplacedET);
 
+                            //databaseReference = firebaseDatabase.getReference().child("Vehicle");
                             DatabaseReference newPost = databaseReference.push(); //creates new instance id for every post
                                 //old way to upload to database
                             //newPost.child("vehicleImage").setValue(downloadUrl.toString());
@@ -316,29 +328,39 @@ public class AddTwoWheelerVehicleDetails extends AppCompatActivity {
                             //                                        newPost.child("indicatorReplaced").setValue(indicatorReplacedET);
                             //                                        newPost.child("aboutVehicle").setValue(aboutVehicleET);
 
-                            Map<String,String> dataToSave = new HashMap<>();
-                            //HashMap<String,String> dataToSave = new HashMap<>();
+//                            Map<String,String> dataToSave = new HashMap<>();
+//                            //HashMap<String,String> dataToSave = new HashMap<>();
+//
+//                            dataToSave.put("vehicleImage" , downloadUri.toString());
+//                            dataToSave.put("vehicleName" , vehicleNameET);
+//                            dataToSave.put("vehicleNumber" , vehicleNumberET);
+//                            dataToSave.put("recentServiceDate" , recentServiceET);
+//                            dataToSave.put("recentServiceMetreReading" , recentServiceMetreET);
+//                            dataToSave.put("nextServiceDate" , nextServiceET);
+//                            dataToSave.put("nextServiceMetreReading" , nextServiceMetreET);
+//                            dataToSave.put("vehicleInsurance" , vehicleInsuranceET);
+//                            dataToSave.put("insuranceExpiry" , insuranceExpiryET);
+//                            dataToSave.put("engineOil" , engineOilET);
+//                            dataToSave.put("engineService" , engineServiceET);
+//                            dataToSave.put("chainReplaced" , chainReplacedET);
+//                            dataToSave.put("backTyreReplaced" , backTyreReplacedET);
+//                            dataToSave.put("frontTyreReplaced" , frontTyreReplacedET);
+//                            dataToSave.put("vehicleSeatReplaced" , vehicleSeatReplacedET);
+//                            dataToSave.put("headlightReplaced" , headlightReplacedET);
+//                            dataToSave.put("indicatorReplaced" , indicatorReplacedET);
+//                            dataToSave.put("aboutVehicle" , aboutVehicleET);
+//
+//                            newPost.setValue(dataToSave);
+//                            progressDialog.dismiss();
 
-                            dataToSave.put("vehicleImage" , downloadUri.toString());
-                            dataToSave.put("vehicleName" , vehicleNameET);
-                            dataToSave.put("vehicleNumber" , vehicleNumberET);
-                            dataToSave.put("recentServiceDate" , recentServiceET);
-                            dataToSave.put("recentServiceMetreReading" , recentServiceMetreET);
-                            dataToSave.put("nextServiceDate" , nextServiceET);
-                            dataToSave.put("nextServiceMetreReading" , nextServiceMetreET);
-                            dataToSave.put("vehicleInsurance" , vehicleInsuranceET);
-                            dataToSave.put("insuranceExpiry" , insuranceExpiryET);
-                            dataToSave.put("engineOil" , engineOilET);
-                            dataToSave.put("engineService" , engineServiceET);
-                            dataToSave.put("chainReplaced" , chainReplacedET);
-                            dataToSave.put("backTyreReplaced" , backTyreReplacedET);
-                            dataToSave.put("frontTyreReplaced" , frontTyreReplacedET);
-                            dataToSave.put("vehicleSeatReplaced" , vehicleSeatReplacedET);
-                            dataToSave.put("headlightReplaced" , headlightReplacedET);
-                            dataToSave.put("indicatorReplaced" , indicatorReplacedET);
-                            dataToSave.put("aboutVehicle" , aboutVehicleET);
+                            Vehicle vehicle = new Vehicle( downloadUri.toString() , vehicleNameET , vehicleNumberET , recentServiceET , recentServiceMetreET , nextServiceET ,
+                                    nextServiceMetreET , vehicleInsuranceET , insuranceExpiryET , engineOilET ,engineServiceET , chainReplacedET ,
+                                    backTyreReplacedET , frontTyreReplacedET , vehicleSeatReplacedET , headlightReplacedET , indicatorReplacedET , aboutVehicleET );
 
-                            newPost.setValue(dataToSave);
+                            //newPost.child(userID).setValue(vehicle);
+
+                            Log.d( "vehicle.toString() : " , vehicle.toString());
+                            newPost.setValue(vehicle);
                             progressDialog.dismiss();
 
                             Toast.makeText( AddTwoWheelerVehicleDetails.this , "Vehicle added!!!" , Toast.LENGTH_LONG).show();
@@ -372,7 +394,7 @@ public class AddTwoWheelerVehicleDetails extends AppCompatActivity {
 
         if (id == R.id.saveData) {
             saveVehicleData();
-            startActivity( new Intent( AddTwoWheelerVehicleDetails.this , DisplayVehicleListActivity.class));
+            //startActivity( new Intent( AddTwoWheelerVehicleDetails.this , DisplayVehicleListActivity.class));
             //super.finish();
             return true;
         }

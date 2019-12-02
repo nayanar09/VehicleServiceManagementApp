@@ -38,12 +38,13 @@
             android:id="@+id/vehicleNumberID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/vehicleNameID"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
             android:ems="10"
             android:hint="@string/vehicleNumber"
             android:inputType="textPersonName"
-            android:layout_alignParentLeft="true"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/vehicleNameID" />
+            android:textStyle="italic" />
 
         <EditText
             android:id="@+id/recentServiceDateID"
@@ -106,23 +107,25 @@
             android:id="@+id/vehicleInsuranceID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/nextServiceMetreID"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
             android:ems="10"
             android:hint="@string/vehicleInsuredDate"
             android:inputType="date"
-            android:layout_alignParentLeft="true"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/nextServiceMetreID"/>
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/insuranceExpiryID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/vehicleInsuranceID"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
             android:ems="10"
             android:hint="@string/vehicleInsuranceExpiryDate"
             android:inputType="date"
-            android:layout_alignParentLeft="true"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/vehicleInsuranceID"/>
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/setAlarmButtonMore"
@@ -157,6 +160,17 @@
             android:layout_below="@id/engineOilID"/>
 
         <EditText
+            android:id="@+id/brakeServiceID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/brakeServiceDate"
+            android:inputType="date"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/engineServiceID"/>
+
+        <EditText
             android:id="@+id/chainReplacedID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -165,7 +179,7 @@
             android:inputType="date"
             android:layout_alignParentLeft="true"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/engineServiceID"/>
+            android:layout_below="@+id/brakeServiceID"/>
 
         <EditText
             android:id="@+id/backTyreReplacedID"

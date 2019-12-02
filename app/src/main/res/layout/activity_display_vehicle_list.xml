@@ -29,6 +29,8 @@
         app:backgroundTint="@color/colorPrimary"
         app:srcCompat="@drawable/baseline_add_black_18dp" />
 
-    <include layout="@layout/content_display_vehicle_list" />
+    <include
+        layout="@layout/content_display_vehicle_list"
+        android:clickable="true" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

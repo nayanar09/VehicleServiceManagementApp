@@ -68,26 +68,24 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@drawable/truck"
-        app:layout_constraintBottom_toTopOf="@+id/gotoDisplayVehicleButton"
         app:layout_constraintEnd_toEndOf="@+id/fourWheelerIB"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/fourWheelerIB"
-        app:layout_constraintTop_toBottomOf="@+id/fourWheelerIB"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/fourWheelerIB" />
 
     <Button
         android:id="@+id/gotoDisplayVehicleButton"
         android:layout_width="244dp"
         android:layout_height="58dp"
+        android:layout_marginTop="184dp"
         android:layout_marginBottom="148dp"
         android:backgroundTint="@color/Orange"
         android:text="@string/viewVehicleAdded"
         android:textColor="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addVehicle"
-        app:layout_constraintVertical_bias="0.953" />
+        app:layout_constraintTop_toBottomOf="@+id/addVehicle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,6 +25,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.nayana.example.vehicleserviceremainderapp.Activities.WelcomeActivity;
 import com.nayana.example.vehicleserviceremainderapp.Model.Vehicle;
 import com.nayana.example.vehicleserviceremainderapp.R;
 import com.nayana.example.vehicleserviceremainderapp.UI.MainActivity;
@@ -39,6 +41,7 @@ public class DisplayVehicleListActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
+    private String userID;
 
     private RecyclerView recyclerView;
     private VehicleRecyclerViewAdapter vehicleRecyclerViewAdapter;
@@ -61,9 +64,10 @@ public class DisplayVehicleListActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
+        userID = firebaseUser.getUid();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference().child("Vehicle");
+        databaseReference = firebaseDatabase.getReference().child("Vehicle").child(userID);
         databaseReference.keepSynced(true);
 
         recyclerView = findViewById(R.id.VehicleDisplayRecyclerViewID);
@@ -77,14 +81,15 @@ public class DisplayVehicleListActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        databaseReference.addChildEventListener(new ChildEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                Vehicle vehicle = dataSnapshot.getValue(Vehicle.class);
-                vehicleList.add(vehicle);
+                for ( DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    Vehicle vehicle = snapshot.getValue(Vehicle.class);
+                    vehicleList.add(vehicle);
 
-                Log.d( "DisplayVehicleList : " ,
+                    Log.i( "DisplayVehicleList : " ,
                         "VehicleName() : "+ vehicle.getVehicleName()
                                 +" VehicleNumber() : "+ vehicle.getVehicleNumber()
                                 +" RecentServiceDate() : "+ vehicle.getRecentServiceDate()
@@ -103,33 +108,18 @@ public class DisplayVehicleListActivity extends AppCompatActivity {
                                 +" HeadlightReplacedDate() : "+vehicle.getHeadlightReplacedDate()
                                 +" IndicatorReplacedDate() : "+vehicle.getIndicatorReplacedDate());
 
-                Collections.reverse(vehicleList);
+                    Collections.reverse(vehicleList);
 
-                vehicleRecyclerViewAdapter = new VehicleRecyclerViewAdapter( DisplayVehicleListActivity.this , vehicleList );
-                recyclerView.setAdapter(vehicleRecyclerViewAdapter);;
-                vehicleRecyclerViewAdapter.notifyDataSetChanged();
-
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                    vehicleRecyclerViewAdapter = new VehicleRecyclerViewAdapter( DisplayVehicleListActivity.this , vehicleList );
+                    recyclerView.setAdapter(vehicleRecyclerViewAdapter);;
+                    vehicleRecyclerViewAdapter.notifyDataSetChanged();
+                }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(getApplicationContext() , "Error :"+ databaseError.getMessage(), Toast.LENGTH_LONG).show();
-
             }
         });
     }
@@ -148,7 +138,7 @@ public class DisplayVehicleListActivity extends AppCompatActivity {
             case R.id.action_add :
                 if ( firebaseAuth != null && firebaseUser != null ) {
 
-                    startActivity( new Intent( DisplayVehicleListActivity.this , AddTwoWheelerVehicleDetails.class));
+                    startActivity( new Intent( getApplicationContext() , WelcomeActivity.class));
                     finish();
                 }
                 break;
